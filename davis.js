@@ -3,7 +3,24 @@
  * Copyright (C) 2011 Oliver Nightingale
  * MIT Licensed
  */
-;
+
+/*!
+ * Universal Module Definition header.
+ * @return {Object} Davis Module object.
+ */
+(function (root, factory) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD. Register as an anonymous module.
+		define(factory);
+	} else {
+		// Browser globals
+		root.Davis = factory();
+	}
+}(this, function (require) {
+
+//Declare the jquery dependency for AMD.
+var jQuery = require('jquery');
+
 /**
  * Convinience method for instantiating a new Davis app and configuring it to use the passed
  * routes and subscriptions.
@@ -1833,4 +1850,9 @@ Davis.App = (function () {
   };
 
   return App;
-})()
+})();
+/*!
+ * UMD closing tags.  And yes, that semicolon on line 1 is intentional.
+ */
+	return Davis;
+}));

@@ -9,7 +9,8 @@ SRC = lib/davis.js \
 	lib/davis.history.js \
 	lib/davis.location.js \
 	lib/davis.request.js \
-	lib/davis.app.js
+	lib/davis.app.js \
+	lib/davis.umd-end.js
 
 VERSION = $(shell cat VERSION)
 
